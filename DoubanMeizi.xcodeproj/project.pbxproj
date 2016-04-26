@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51087C32F045BD5528531FA6 /* Pods_DoubanMeizi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBAF8393743F212629DE1FF /* Pods_DoubanMeizi.framework */; };
+		75A739D61CCF694600217E99 /* DBMZDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */; };
 		75B9A00B1CCA1033003A8336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9A00A1CCA1033003A8336 /* AppDelegate.swift */; };
 		75B9A00D1CCA1033003A8336 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9A00C1CCA1033003A8336 /* MainViewController.swift */; };
 		75B9A0121CCA1033003A8336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B9A0111CCA1033003A8336 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		7535856F1CCF548A0071246F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMZDataRequestManager.swift; sourceTree = "<group>"; };
 		75B9A0071CCA1033003A8336 /* DoubanMeizi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanMeizi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B9A00A1CCA1033003A8336 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		75B9A00C1CCA1033003A8336 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 				7535856F1CCF548A0071246F /* MyPlayground.playground */,
 			);
 			path = supportFiles;
+			sourceTree = "<group>";
+		};
+		75A739D41CCF67AA00217E99 /* NetOperation */ = {
+			isa = PBXGroup;
+			children = (
+				75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */,
+			);
+			path = NetOperation;
 			sourceTree = "<group>";
 		};
 		75B99FFE1CCA1032003A8336 = {
@@ -146,6 +156,7 @@
 		75B9A0381CCA1253003A8336 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				75A739D41CCF67AA00217E99 /* NetOperation */,
 				75B9A00C1CCA1033003A8336 /* MainViewController.swift */,
 				75B9A0391CCA127F003A8336 /* DBMZAplicationManager.swift */,
 				75B9A03B1CCA12C1003A8336 /* DBMZGloble.swift */,
@@ -357,6 +368,7 @@
 				75B9A00D1CCA1033003A8336 /* MainViewController.swift in Sources */,
 				75B9A03C1CCA12C1003A8336 /* DBMZGloble.swift in Sources */,
 				75B9A03A1CCA127F003A8336 /* DBMZAplicationManager.swift in Sources */,
+				75A739D61CCF694600217E99 /* DBMZDataRequestManager.swift in Sources */,
 				75B9A00B1CCA1033003A8336 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

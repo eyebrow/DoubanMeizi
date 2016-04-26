@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import hpple
 
 class MainViewController: UIViewController {
     
@@ -31,13 +32,25 @@ class MainViewController: UIViewController {
         
         self.title = "豆瓣妹子"
         
-        Alamofire.request(.GET, "http://www.dbmeinv.com").responseJSON() {
-            
-            response in
-            guard let JSON = response.result.value else { return }
-            print("JSON: \(JSON)")
-            
+        
+        Alamofire.request(.GET, "http://www.dbmeinv.com")
+            .responseString { response in
+                
+                //print(response.result)
+//                
+//                print(response.data)
+                
+//                var dataStr = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
+//                print(dataStr)
+                
+                guard let JSON :String = response.result.value else { return }
+                print("JSON: \(JSON)")
         }
+        
+        
+        
+        
+        
     }
 
 }
