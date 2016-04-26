@@ -20,7 +20,7 @@ class DBMZAplicationManager: NSObject {
      */
     static func initNavigationBar() {
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-        UINavigationBar.appearance().barTintColor = UIColor(colorNamed: wechatColor.barTintColor)
+        UINavigationBar.appearance().barTintColor = UIColor(colorNamed: DBMZColor.barTintColor)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().translucent = true
         let attributes = [

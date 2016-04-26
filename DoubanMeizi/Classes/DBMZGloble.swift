@@ -6,7 +6,7 @@
 //  Copyright © 2016年 com.tencent.prince. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import UIColor_Hex_Swift
 
 typealias DBMZColor = UIColor.LocalColorName
@@ -19,6 +19,6 @@ extension UIColor{
     }
     
     convenience init(colorNamed name:LocalColorName) {
-        self.init(rgba:name.rawValimport UIColor_Hex_Swiftue)
+        self.init(rgba:name.rawValue)
     }
 }

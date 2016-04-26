@@ -26,6 +26,7 @@ def pods
     #Objective-C
     pod 'YYText'
     pod 'SVProgressHUD', '~> 2.0-beta8'
+    pod 'hpple'
 end
 
 target 'DoubanMeizi' do
