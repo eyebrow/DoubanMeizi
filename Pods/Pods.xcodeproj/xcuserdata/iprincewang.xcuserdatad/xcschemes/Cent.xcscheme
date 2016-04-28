@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3B92A648FBCBAB28413CD9CC'
+               BlueprintIdentifier = '60844801E944D1FE66E3BFB7'
                BlueprintName = 'Cent'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Cent.framework'>

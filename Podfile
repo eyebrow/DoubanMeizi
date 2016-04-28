@@ -27,6 +27,7 @@ def pods
     pod 'YYText'
     pod 'SVProgressHUD', '~> 2.0-beta8'
     pod 'hpple'
+    pod 'HMSegmentedControl'
 end
 
 target 'DoubanMeizi' do

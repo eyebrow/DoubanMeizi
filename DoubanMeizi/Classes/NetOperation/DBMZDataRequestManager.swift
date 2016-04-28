@@ -11,8 +11,10 @@ import Alamofire
 import hpple
 
 let BASEURL = "http://www.dbmeinv.com"
+let MainPageXpathQueryString = "//div[@class=\"panel-heading clearfix\"]/ul[@class=\"nav nav-pills\"]"
 
-typealias dataBlock = (NSArray)->Void
+
+typealias dataBlock = ([MainPageModel])->Void
 
 class DBMZDataRequestManager: NSObject {
     
@@ -26,18 +28,11 @@ class DBMZDataRequestManager: NSObject {
                 
                 let hpple:TFHpple = TFHpple(data: response.data, isXML: false)
                 
-                let items:NSArray = hpple.searchWithXPathQuery("//div[@class=\"panel-heading clearfix\"]/ul[@class=\"nav nav-pills\"]")
+                let items:NSArray = hpple.searchWithXPathQuery(MainPageXpathQueryString)
                 
                 guard  items.count > 0  else {return}
                 
-                
-                
-                print(items.count)
-                print("=======================================================")
-                
                 for item in items {
-                    
-                    //let item:TFHppleElement = items.objectAtIndex(i) as! TFHppleElement
                     
                     let lis:NSArray = item.childrenWithTagName("li")
                     
@@ -51,12 +46,15 @@ class DBMZDataRequestManager: NSObject {
                         let aNodes:NSArray = aHpple.searchWithXPathQuery("//a")
                         
                         let aNode:TFHppleElement = aNodes.firstObject as! TFHppleElement
+                        
                         print(aNode.objectForKey("href"))
                         print(aNode.text())
                         
-                        let model = MainPageModel()
-                        model.title = aNode.text()
-                        model.title = aNode.objectForKey("hred")
+                        //guard aNode.text() != nil && aNode.objectForKey("hred") != nil else {continue}
+                        
+                        let model = MainPageModel(title: aNode.text(), url: aNode.objectForKey("hred"))
+//                        model.title = aNode.text()
+//                        model.title = aNode.objectForKey("hred")
 
                         dataList.append(model)
                     }

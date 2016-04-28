@@ -7,6 +7,7 @@ PODS:
   - Cent (5.0.0):
     - Dollar (~> 5.0.0)
   - Dollar (5.0.0)
+  - HMSegmentedControl (1.5.2)
   - hpple (0.2.0)
   - KeychainAccess (2.3.5)
   - Kingfisher (2.3.1)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - BSImagePicker (~> 2.2)
   - Cent
   - Dollar
+  - HMSegmentedControl
   - hpple
   - KeychainAccess (~> 2.3.3)
   - Kingfisher
@@ -51,6 +53,7 @@ SPEC CHECKSUMS:
   BSImagePicker: 591b28ce4994c44cbc4ac896717c1db9f9fadd18
   Cent: 4bfbe6037d911c0491425ae1ff8057404050fbb2
   Dollar: 310893dd6b3799b9b155e3deb61a0492987e4d03
+  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
   Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
