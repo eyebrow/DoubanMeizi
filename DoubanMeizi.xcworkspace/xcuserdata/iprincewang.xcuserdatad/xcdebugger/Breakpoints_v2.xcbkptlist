@@ -6,47 +6,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DoubanMeizi/MainViewController.swift"
-            timestampString = "483358616.848718"
+            filePath = "DoubanMeizi/Classes/NetOperation/DBMZDataRequestManager.swift"
+            timestampString = "483534487.936014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "setup()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetctMainPageData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DoubanMeizi/MainViewController.swift"
-            timestampString = "483358126.202906"
+            filePath = "DoubanMeizi/Classes/NetOperation/DBMZDataRequestManager.swift"
+            timestampString = "483534487.936014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "setup()"
+            landmarkName = "fetctMainPageData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoubanMeizi/Classes/NetOperation/DBMZDataRequestManager.swift"
+            timestampString = "483534487.936014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetctMainPageData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoubanMeizi/MainViewController.swift"
-            timestampString = "483358405.419365"
+            timestampString = "483534578.480669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "setup()"
             landmarkType = "5">
          </BreakpointContent>

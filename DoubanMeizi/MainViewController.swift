@@ -12,6 +12,8 @@ import hpple
 
 class MainViewController: UIViewController {
     
+    var dataSource:NSMutableArray?
+    
     override func loadView() {
         
     }
@@ -32,23 +34,14 @@ class MainViewController: UIViewController {
         
         self.title = "豆瓣妹子"
         
-        
-        Alamofire.request(.GET, "http://www.dbmeinv.com")
-            .responseString { response in
-                
-                //print(response.result)
-//                
-//                print(response.data)
-                
-//                var dataStr = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-//                print(dataStr)
-                
-                guard let JSON :String = response.result.value else { return }
-                print("JSON: \(JSON)")
+        DBMZDataRequestManager.fetctMainPageData { (_dataArray:NSArray) in
+            self.dataSource! = _dataArray.mutableCopy() as! NSMutableArray
+            
+            guard self.dataSource != nil else {return}
+            
+            print(self.dataSource)
+            
         }
-        
-        
-        
         
         
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51087C32F045BD5528531FA6 /* Pods_DoubanMeizi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBAF8393743F212629DE1FF /* Pods_DoubanMeizi.framework */; };
+		7529D1BE1CD1FAF60024BAB1 /* DBMZOBJCBrige.m in Sources */ = {isa = PBXBuildFile; fileRef = 7529D1BD1CD1FAF60024BAB1 /* DBMZOBJCBrige.m */; };
+		7529D1C21CD217590024BAB1 /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529D1C11CD217590024BAB1 /* MainPageModel.swift */; };
 		75A739D61CCF694600217E99 /* DBMZDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */; };
 		75B9A00B1CCA1033003A8336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9A00A1CCA1033003A8336 /* AppDelegate.swift */; };
 		75B9A00D1CCA1033003A8336 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9A00C1CCA1033003A8336 /* MainViewController.swift */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7529D1BB1CD1FAF60024BAB1 /* DoubanMeizi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoubanMeizi-Bridging-Header.h"; sourceTree = "<group>"; };
+		7529D1BC1CD1FAF60024BAB1 /* DBMZOBJCBrige.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMZOBJCBrige.h; sourceTree = "<group>"; };
+		7529D1BD1CD1FAF60024BAB1 /* DBMZOBJCBrige.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMZOBJCBrige.m; sourceTree = "<group>"; };
+		7529D1C11CD217590024BAB1 /* MainPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		7535856F1CCF548A0071246F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMZDataRequestManager.swift; sourceTree = "<group>"; };
 		75B9A0071CCA1033003A8336 /* DoubanMeizi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanMeizi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */,
+				7529D1BC1CD1FAF60024BAB1 /* DBMZOBJCBrige.h */,
+				7529D1BD1CD1FAF60024BAB1 /* DBMZOBJCBrige.m */,
+				7529D1BB1CD1FAF60024BAB1 /* DoubanMeizi-Bridging-Header.h */,
 			);
 			path = NetOperation;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 				75B9A00C1CCA1033003A8336 /* MainViewController.swift */,
 				75B9A0391CCA127F003A8336 /* DBMZAplicationManager.swift */,
 				75B9A03B1CCA12C1003A8336 /* DBMZGloble.swift */,
+				7529D1C11CD217590024BAB1 /* MainPageModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -368,7 +378,9 @@
 				75B9A00D1CCA1033003A8336 /* MainViewController.swift in Sources */,
 				75B9A03C1CCA12C1003A8336 /* DBMZGloble.swift in Sources */,
 				75B9A03A1CCA127F003A8336 /* DBMZAplicationManager.swift in Sources */,
+				7529D1C21CD217590024BAB1 /* MainPageModel.swift in Sources */,
 				75A739D61CCF694600217E99 /* DBMZDataRequestManager.swift in Sources */,
+				7529D1BE1CD1FAF60024BAB1 /* DBMZOBJCBrige.m in Sources */,
 				75B9A00B1CCA1033003A8336 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,11 +516,14 @@
 			baseConfigurationReference = F019EF86E493F26B98EBA57D /* Pods-DoubanMeizi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DoubanMeizi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.DoubanMeizi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DoubanMeizi/Classes/NetOperation/DoubanMeizi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -517,11 +532,13 @@
 			baseConfigurationReference = D66652B24F81D5CA1CDC3973 /* Pods-DoubanMeizi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DoubanMeizi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.DoubanMeizi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DoubanMeizi/Classes/NetOperation/DoubanMeizi-Bridging-Header.h";
 			};
 			name = Release;
 		};
