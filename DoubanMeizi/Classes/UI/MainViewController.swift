@@ -75,13 +75,19 @@ class MainViewController: UIViewController {
             }
             
             print(self.type)
+            
+            guard index < self.navDataSource.count else {return}
+            let model:DBMZNavPageModel = self.navDataSource.get(index)
+            
+            self.requetMainPage(model.url)
+            
         }
         
         self.view .addSubview(self.cagegoryMenu!)
     }
     
     func setupTableView() {
-        self.tableView = UITableView(frame: CGRect(x: 0, y: self.cagegoryMenu.bounds.origin.y + self.cagegoryMenu.bounds.size.height, width: SCREEN_WIDTH, height: self.view.bounds.size.height - self.cagegoryMenu.bounds.size.height), style: .Plain)
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 64 + 40, width: SCREEN_WIDTH, height: self.view.bounds.size.height - self.cagegoryMenu.bounds.size.height), style: .Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view .addSubview(self.tableView)

@@ -26,10 +26,10 @@ class MainPageTableViewCell: UITableViewCell {
     }
     
     func setup() {
-        self.thumailImgView = UIImageView(frame: CGRect(origin: CGPoint(x:10 ,y:0), size: CGSize(width: 60, height: 60)))
+        self.thumailImgView = UIImageView(frame: CGRect(origin: CGPoint(x:10 ,y:10), size: CGSize(width: 60, height: 60)))
         self.thumailImgView.contentMode = .ScaleToFill
         self.contentView .addSubview(self.thumailImgView)
-        self.titleLabel = UILabel(frame: CGRect(x: 70, y: 20, width: SCREEN_WIDTH - 70, height: 20))
+        self.titleLabel = UILabel(frame: CGRect(x: 80, y: 25, width: SCREEN_WIDTH - 70, height: 20))
         self.titleLabel.contentMode = .Left
         self.contentView.addSubview(self.titleLabel)
         
