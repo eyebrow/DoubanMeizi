@@ -12,13 +12,14 @@ import hpple
 
 let BASEURL = "http://www.dbmeinv.com"
 let MainPageXpathQueryString = "//div[@class=\"panel-heading clearfix\"]/ul[@class=\"nav nav-pills\"]"
+let AllPageXpathQuertString = "//div[@class=\"panel-body\"]/ul[@class=\"thumbnails\"]"
 
-
-typealias dataBlock = ([MainPageModel])->Void
+typealias navDataBlock = ([DBMZNavPageModel])->Void
+typealias MainDataBlock = ([DBMZMainPageModel])->Void
 
 class DBMZDataRequestManager: NSObject {
     
-    class func fetctMainPageData(block:dataBlock) {
+    class func fetctMainPageData(block:navDataBlock) {
         
         Alamofire.request(.GET, BASEURL)
             .responseString { response in
@@ -32,11 +33,13 @@ class DBMZDataRequestManager: NSObject {
                 
                 guard  items.count > 0  else {return}
                 
+                var dataList = [DBMZNavPageModel]()
+                
                 for item in items {
                     
                     let lis:NSArray = item.childrenWithTagName("li")
                     
-                    var dataList = [MainPageModel]()
+                    
                     
                     for chlidItem in lis {
                         
@@ -52,19 +55,70 @@ class DBMZDataRequestManager: NSObject {
                         
                         //guard aNode.text() != nil && aNode.objectForKey("hred") != nil else {continue}
                         
-                        let model = MainPageModel(title: aNode.text(), url: aNode.objectForKey("hred"))
+                        let model = DBMZNavPageModel(title: aNode.text(), url: aNode.objectForKey("href"))
 //                        model.title = aNode.text()
 //                        model.title = aNode.objectForKey("hred")
 
                         dataList.append(model)
                     }
                     
-                    guard dataList.count > 0 else {return}
                     
-                    block(dataList)
                 }
+                
+                guard dataList.count > 0 else {return}
+                
+                block(dataList)
     
                 
+        }
+    }
+    
+    class func fetchAllPageData(url hurl:String,block:MainDataBlock) {
+        Alamofire.request(.GET, hurl)
+        .responseString { response in
+            guard response.result.value != nil else { return }
+            let hpple:TFHpple = TFHpple(data: response.data, isXML: false)
+            let items:NSArray = hpple.searchWithXPathQuery(AllPageXpathQuertString)
+            
+            guard  items.count > 0  else {return}
+            
+            var dataList = [DBMZMainPageModel]()
+            
+            for item in items {
+                let lis:NSArray = item.childrenWithTagName("li")
+                
+                
+                for chlidItem in lis{
+                    let chileItemData:NSData = (chlidItem as! TFHppleElement).raw.dataUsingEncoding(NSUTF8StringEncoding)!
+                    let aHpple:TFHpple = TFHpple(HTMLData: chileItemData)
+                    
+                    let aNodes:NSArray = aHpple.searchWithXPathQuery("//div[@class=\"img_single\"]/a")
+                    
+                    let aNode:TFHppleElement = aNodes.firstObject as! TFHppleElement
+                    
+                    let jumpUrl:String = aNode.objectForKey("href")
+                    
+                    let imgNodes:NSArray = aHpple.searchWithXPathQuery("//div[@class=\"img_single\"]/a/img")
+                    let imgNode:TFHppleElement = imgNodes.firstObject as! TFHppleElement
+                    let title:String = imgNode.objectForKey("title")
+                    let thumailImgUrl = imgNode.objectForKey("src")
+                    
+                    print("==================")
+                    print(title)
+                    print(thumailImgUrl)
+                    print(jumpUrl)
+                    
+                    let model = DBMZMainPageModel(title: title, imageUrl: thumailImgUrl, jumpUrl: jumpUrl)
+                    
+                    dataList.append(model)
+
+                }
+                
+            }
+            
+            guard dataList.count > 0 else {return}
+            
+            block(dataList)
         }
     }
     

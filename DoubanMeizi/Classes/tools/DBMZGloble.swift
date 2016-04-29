@@ -9,6 +9,31 @@
 import Foundation
 import UIColor_Hex_Swift
 
+let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
+let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
+
+struct DBMZNavPageModel {
+    let title:String!
+    let url:String!
+    
+}
+
+struct DBMZMainPageModel {
+    let title:String!
+    let imageUrl:String!
+    let jumpUrl:String!
+}
+
+enum DBMZType:Int {
+    case DBMZTypeAll = 0
+    case DBMZTypeDaXiong = 1
+    case DBMZTypeQiaoTun = 2
+    case DBMZTypeHeisi = 3
+    case DBMZTypeMeiTui = 4
+    case DBMZTypeQingXin = 5
+    case DBMZTypeZaHui = 6
+}
+
 typealias DBMZColor = UIColor.LocalColorName
 
 extension UIColor{
