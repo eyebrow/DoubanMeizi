@@ -240,6 +240,12 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let model = self.mainPageDataSource.get(indexPath.row)
+        guard model != nil else{return}
+        let vc = DetailPageViewController()
+        vc.url = model.jumpUrl
+        vc.titleStr = model.title
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -291,7 +297,6 @@ extension MainViewController: UITableViewDataSource {
         let url:String = model.url + "?pager_offset=\(self.currentPage)"
         
         print(url)
-        //http://www.dbmeinv.com/dbgroup/show.htm?pager_offset=2
         
         self.requetMainPage(url, block: { (_dataArray :[DBMZMainPageModel]) in
             

@@ -13,6 +13,7 @@
 		7535DC951CD3027600814C2E /* DBMZAplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535DC941CD3027600814C2E /* DBMZAplicationManager.swift */; };
 		7535DC971CD3029B00814C2E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535DC961CD3029B00814C2E /* MainViewController.swift */; };
 		7535DC991CD309AF00814C2E /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535DC981CD309AF00814C2E /* MainPageTableViewCell.swift */; };
+		7535DCB81CD376E500814C2E /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535DCB71CD376E500814C2E /* DetailPageViewController.swift */; };
 		75A739D61CCF694600217E99 /* DBMZDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */; };
 		75B9A00B1CCA1033003A8336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9A00A1CCA1033003A8336 /* AppDelegate.swift */; };
 		75B9A0121CCA1033003A8336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B9A0111CCA1033003A8336 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		7535DC941CD3027600814C2E /* DBMZAplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMZAplicationManager.swift; sourceTree = "<group>"; };
 		7535DC961CD3029B00814C2E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7535DC981CD309AF00814C2E /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
+		7535DCB71CD376E500814C2E /* DetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		75A739D51CCF694600217E99 /* DBMZDataRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMZDataRequestManager.swift; sourceTree = "<group>"; };
 		75B9A0071CCA1033003A8336 /* DoubanMeizi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanMeizi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B9A00A1CCA1033003A8336 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,9 +116,10 @@
 		7535DC931CD3027600814C2E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7535DC961CD3029B00814C2E /* MainViewController.swift */,
 				7535DC941CD3027600814C2E /* DBMZAplicationManager.swift */,
+				7535DC961CD3029B00814C2E /* MainViewController.swift */,
 				7535DC981CD309AF00814C2E /* MainPageTableViewCell.swift */,
+				7535DCB71CD376E500814C2E /* DetailPageViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7535DCB81CD376E500814C2E /* DetailPageViewController.swift in Sources */,
 				7529D1C81CD237FC0024BAB1 /* DBMZCategoryMenuView.m in Sources */,
 				7529D1CD1CD23C870024BAB1 /* DBMZGloble.swift in Sources */,
 				7535DC951CD3027600814C2E /* DBMZAplicationManager.swift in Sources */,
