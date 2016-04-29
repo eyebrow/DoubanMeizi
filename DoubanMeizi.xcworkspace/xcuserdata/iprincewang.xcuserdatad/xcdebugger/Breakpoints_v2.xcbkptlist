@@ -166,23 +166,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
-            timestampString = "483607527.654767"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "requetNavPage()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoubanMeizi/Classes/NetOperation/DBMZDataRequestManager.swift"
@@ -198,7 +182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoubanMeizi/Classes/NetOperation/DBMZDataRequestManager.swift"
@@ -214,16 +198,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
+            timestampString = "483619295.989243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "requetMainPage(_:block:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.requetMainPage (Swift.String, block : (Swift.Array&lt;DoubanMeizi.DBMZMainPageModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619297.06038"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "234"
+                  endingLineNumber = "234"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.(requetMainPage (Swift.String, block : (Swift.Array&lt;DoubanMeizi.DBMZMainPageModel&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619297.060525"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "234"
+                  endingLineNumber = "234"
+                  offsetFromSymbolStart = "223">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
+            timestampString = "483619295.989243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "requetMainPage(_:block:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.requetMainPage (Swift.String, block : (Swift.Array&lt;DoubanMeizi.DBMZMainPageModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619297.061045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.(requetMainPage (Swift.String, block : (Swift.Array&lt;DoubanMeizi.DBMZMainPageModel&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619297.061133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
-            timestampString = "483607527.654767"
+            timestampString = "483619295.989243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "requetNavPage()"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "refreshData()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,12 +314,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
-            timestampString = "483607527.654767"
+            timestampString = "483619352.866507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "setupTableView()"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
+            landmarkName = "loadMore()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.loadMore () -&gt; ()"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619387.26007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "296"
+                  endingLineNumber = "296"
+                  offsetFromSymbolStart = "2532">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DoubanMeizi.MainViewController.(loadMore () -&gt; ()).(closure #1)"
+                  moduleName = "DoubanMeizi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iprincewang/gitProgram/DoubanMeizi/DoubanMeizi/Classes/UI/MainViewController.swift"
+                  timestampString = "483619387.260163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "298"
+                  endingLineNumber = "298"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoubanMeizi/Classes/UI/MainViewController.swift"
+            timestampString = "483619392.320591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "loadMore()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

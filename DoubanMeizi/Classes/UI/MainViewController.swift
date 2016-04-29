@@ -20,17 +20,61 @@ class MainViewController: UIViewController {
     var type:DBMZType = DBMZType.DBMZTypeAll
     
     var mainPageDataSource:[DBMZMainPageModel]!
+    //拉刷新控制器
+    var refreshControl = UIRefreshControl()
+    var infiniteScrollingView:UIView?
     
+    var refreshing: Bool = false {
+        didSet {
+            if (self.refreshing) {
+                self.refreshControl.beginRefreshing()
+                self.refreshControl.attributedTitle = NSAttributedString(string: "加载中...")
+                print("Loading...")
+            }
+            else {
+                
+                self.refreshControl.endRefreshing()
+                self.refreshControl.attributedTitle = NSAttributedString(string: "完成加载")
+                print("Loaded & set:Pull to Refresh")
+            }
+        }
+    }
+    
+    var loadMoreEnable:Bool = true
+    var loadingMore:Bool = false {
+        
+        willSet{
+            if self.loadMoreEnable {
+                self.loadMoreEnable = false
+            }
+            else{
+                return
+            }
+        }
+        
+        didSet{
+            if self.loadingMore {
+                self.loadMore()
+            }
+            else{
+                self.tableView.tableFooterView = nil
+            }
+        }
+    }
+    
+    var currentPage:Int = 1
     
     override func loadView() {
         super.loadView()
         self.setup()
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.type = DBMZType.DBMZTypeAll
         self .requetNavPage()
     }
 
@@ -46,6 +90,8 @@ class MainViewController: UIViewController {
         self .setupCagegoryMenuView()
         
         self.setupTableView()
+        
+        self.setupRefreshView()
 
     }
     func setupCagegoryMenuView() {
@@ -79,7 +125,10 @@ class MainViewController: UIViewController {
             guard index < self.navDataSource.count else {return}
             let model:DBMZNavPageModel = self.navDataSource.get(index)
             
-            self.requetMainPage(model.url)
+            self.requetMainPage(model.url, block: { (_dataArray :[DBMZMainPageModel]) in
+                self.mainPageDataSource = _dataArray
+                self.tableView?.reloadData()
+            })
             
         }
         
@@ -87,10 +136,51 @@ class MainViewController: UIViewController {
     }
     
     func setupTableView() {
-        self.tableView = UITableView(frame: CGRect(x: 0, y: 64 + 40, width: SCREEN_WIDTH, height: self.view.bounds.size.height - self.cagegoryMenu.bounds.size.height), style: .Plain)
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 64 + 40, width: SCREEN_WIDTH, height: self.view.bounds.size.height - 64 - 40), style: .Plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view .addSubview(self.tableView)
+    }
+    
+    func setupRefreshView() {
+        //添加刷新
+        
+        self.refreshControl.addTarget(self, action:#selector(refreshData), forControlEvents: .ValueChanged)
+        self.refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新数据")
+        self.tableView.addSubview(self.refreshControl)
+        
+        self.setupInfiniteScrollingView()
+    }
+    
+    // 刷新数据
+    func refreshData() {
+        //移除老数据
+        self.mainPageDataSource?.removeAll()
+        self.currentPage = 0
+        
+        print(self.type.rawValue)
+        guard self.type.rawValue < self.navDataSource?.count else {return}
+        let model:DBMZNavPageModel = self.navDataSource.get(self.type.rawValue)
+        
+        self.refreshing = true
+        self.requetMainPage(model.url, block: { (_dataArray :[DBMZMainPageModel]) in
+            
+            self.refreshing = false
+            self.mainPageDataSource = _dataArray
+            self.tableView?.reloadData()
+        })
+    }
+    
+    //上拉刷新
+    private func setupInfiniteScrollingView() {
+        self.infiniteScrollingView = UIView(frame: CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, 60))
+        self.infiniteScrollingView!.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        self.infiniteScrollingView!.backgroundColor = UIColor.whiteColor()
+        let activityViewIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        activityViewIndicator.color = UIColor.darkGrayColor()
+        activityViewIndicator.frame = CGRectMake(self.infiniteScrollingView!.frame.size.width/2-activityViewIndicator.frame.width/2, self.infiniteScrollingView!.frame.size.height/2-activityViewIndicator.frame.height/2, activityViewIndicator.frame.width, activityViewIndicator.frame.height)
+        activityViewIndicator.startAnimating()
+        self.infiniteScrollingView!.addSubview(activityViewIndicator)
     }
     
     func requetNavPage() {
@@ -119,22 +209,28 @@ class MainViewController: UIViewController {
             
             guard allUrl != nil else{return}
             
-            self.requetMainPage(allUrl)
+            self.requetMainPage(allUrl, block: { (_dataArray :[DBMZMainPageModel]) in
+                
+                self.mainPageDataSource = _dataArray
+                self.tableView?.reloadData()
+            })
+            
         }
     }
     
-    func requetMainPage(url:String) {
+    func requetMainPage(url:String,block:([DBMZMainPageModel])-> Void){
         
-        
+        //self.refreshing = true
         DBMZDataRequestManager.fetchAllPageData(url: url) { (_dataArray :[DBMZMainPageModel]) in
             
             guard _dataArray.count != 0 else {return}
             
             if let datas:[DBMZMainPageModel] = [DBMZMainPageModel](_dataArray){
-                self.mainPageDataSource = datas
-                self.tableView?.reloadData()
+//                self.mainPageDataSource = datas
+//                self.tableView?.reloadData()
+                block(datas)
             }
-            
+            //self.refreshing = false
         }
     }
 
@@ -167,11 +263,48 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let model = self.mainPageDataSource.get(indexPath.row)
+        
+        guard model != nil else{return UITableViewCell()}
         //guard let type: MessageContentType = chatModel.messageContentType where chatModel != nil else {
         let cell = MainPageTableViewCell(style: .Default, reuseIdentifier: "MainPageCell")
         cell.updateCell(imageUrl: model.imageUrl, title: model.title)
         //}
+        
+        //当下拉到底部，执行loadMore()
+        if (indexPath.row == self.mainPageDataSource.count - 1) {
+            self.tableView.tableFooterView = self.infiniteScrollingView
+            self.loadingMore = true
+        }
+        
         return cell//type.chatCell(tableView, indexPath: indexPath, model: chatModel, viewController: self)!
+    }
+    
+    func loadMore(){
+        print("loadMore")
+        
+        self.currentPage += 1
+        
+        print(self.type.rawValue)
+        guard self.type.rawValue < self.navDataSource?.count else {return}
+        let model:DBMZNavPageModel = self.navDataSource.get(self.type.rawValue)
+        
+        let url:String = model.url + "?pager_offset=\(self.currentPage)"
+        
+        print(url)
+        //http://www.dbmeinv.com/dbgroup/show.htm?pager_offset=2
+        
+        self.requetMainPage(url, block: { (_dataArray :[DBMZMainPageModel]) in
+            
+            self.loadingMore = false
+            guard _dataArray.count > 0 else {return}
+            
+            for item in _dataArray{
+                self.mainPageDataSource.append(item)
+            }
+            
+            self.tableView?.reloadData()
+        })
+
     }
 }
 
