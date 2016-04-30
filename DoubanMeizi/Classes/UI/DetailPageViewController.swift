@@ -34,10 +34,14 @@ class DetailPageViewController: UIViewController {
         
         self.title = titleStr
         
-        self.collectionView =  UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        self.collectionView =  UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         self.collectionView!.backgroundColor = UIColor.grayColor()
         self.collectionView!.dataSource  = self
         self.collectionView!.delegate = self
+        
+        layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH)
+        
         self.collectionView!.registerClass(ImageTextCell.self, forCellWithReuseIdentifier: "ImageTextCell")
         
         self.view.addSubview(self.collectionView!)
@@ -103,9 +107,11 @@ extension DetailPageViewController:UICollectionViewDelegate,UICollectionViewData
         
         guard self.imageArray?.count > 0 else{return UICollectionViewCell()}
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageTextCell", forIndexPath: indexPath) as! ImageTextCell
-        
-        cell.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH)
-        cell.imageStr = self.imageArray?[indexPath.item]
+        print("row:\(indexPath.row)")
+        print("item:\(indexPath.item)")
+        print("section:\(indexPath.section)")
+
+        cell.imageStr = self.imageArray?[indexPath.section]
         return cell
     }
 }

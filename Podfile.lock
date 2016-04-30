@@ -11,6 +11,7 @@ PODS:
   - hpple (0.2.0)
   - KeychainAccess (2.3.5)
   - Kingfisher (2.3.1)
+  - MJRefresh (3.1.0)
   - ObjectMapper (1.2.0)
   - RxBlocking (2.1.0):
     - RxSwift (~> 2.0)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - hpple
   - KeychainAccess (~> 2.3.3)
   - Kingfisher
+  - MJRefresh
   - ObjectMapper (~> 1.0)
   - RxBlocking (~> 2.1.0)
   - RxCocoa (~> 2.1.0)
@@ -57,6 +59,7 @@ SPEC CHECKSUMS:
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
   Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   RxBlocking: fa297def258d85c5beae9ed507f94645260b3747
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c

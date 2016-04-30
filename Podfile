@@ -24,6 +24,7 @@ def pods
     pod 'BSImagePicker', '~> 2.2'
     
     #Objective-C
+    pod 'MJRefresh'
     pod 'YYText'
     pod 'SVProgressHUD', '~> 2.0-beta8'
     pod 'hpple'

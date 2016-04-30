@@ -10,3 +10,4 @@
 #import "hpple/TFHpple.h"
 #import "HMSegmentedControl/HMSegmentedControl.h"
 #import "DBMZCategoryMenuView.h"
+#import "MJRefresh/MJRefresh.h"

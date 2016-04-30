@@ -13,7 +13,7 @@ import hpple
 let BASEURL = "http://www.dbmeinv.com"
 let MainPageXpathQueryString = "//div[@class=\"panel-heading clearfix\"]/ul[@class=\"nav nav-pills\"]"
 let AllPageXpathQuertString = "//div[@class=\"panel-body\"]/ul[@class=\"thumbnails\"]"
-let DetailPageXpathQuertString = "//div[@class=\"panel-body markdown\"]"
+let DetailPageXpathQuertString = "//div[@class=\"panel-body markdown\"]//div[@class=\"topic-figure cc\"]"
 
 typealias navDataBlock = ([DBMZNavPageModel])->Void
 typealias MainDataBlock = ([DBMZMainPageModel])->Void
@@ -144,7 +144,7 @@ class DBMZDataRequestManager: NSObject {
 //                    
 //                    let jumpUrl:String = aNode.objectForKey("href")
                     
-                    let imgNodes:NSArray = aHpple.searchWithXPathQuery("//div[@class=\"topic-figure cc\"]/img")
+                    let imgNodes:NSArray = aHpple.searchWithXPathQuery("//img")
                     
                     for imageNode in imgNodes{
                         
