@@ -18,6 +18,7 @@ PODS:
   - RxCocoa (2.1.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.1.0)
+  - SKPhotoBrowser (1.8.6)
   - SnapKit (0.20.0)
   - SVProgressHUD (2.0.3)
   - Swift_cURLCommand (1.0.0)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - RxBlocking (~> 2.1.0)
   - RxCocoa (~> 2.1.0)
   - RxSwift (~> 2.1.0)
+  - SKPhotoBrowser
   - SnapKit
   - SVProgressHUD (~> 2.0-beta8)
   - Swift_cURLCommand
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   RxBlocking: fa297def258d85c5beae9ed507f94645260b3747
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: 110fb07f81c17c2c3b3254d168363057b1880d18
+  SKPhotoBrowser: 2fa59b851b04358b186c811ca9e2b4aa4945aa33
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   Swift_cURLCommand: 956902720891266119dd2b8d0b513ba353cfe625

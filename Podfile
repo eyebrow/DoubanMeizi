@@ -22,6 +22,8 @@ def pods
     pod 'Swift_cURLCommand'
     pod 'SnapKit'
     pod 'BSImagePicker', '~> 2.2'
+    pod 'SKPhotoBrowser'
+    use_frameworks!
     
     #Objective-C
     pod 'MJRefresh'

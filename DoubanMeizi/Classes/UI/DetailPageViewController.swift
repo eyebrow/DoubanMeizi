@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SKPhotoBrowser
 
 class DetailPageViewController: UIViewController {
 
@@ -113,6 +114,22 @@ extension DetailPageViewController:UICollectionViewDelegate,UICollectionViewData
 
         cell.imageStr = self.imageArray?[indexPath.section]
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        var images = [SKPhoto]()
+        
+        for imageUrl in self.imageArray! {
+            let photo = SKPhoto.photoWithImageURL(imageUrl)
+            photo.shouldCachePhotoURLImage = false // you can use image cache by true(NSCache)
+            images.append(photo)
+        }
+        
+        // create PhotoBrowser Instance, and present.
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(indexPath.section)
+        presentViewController(browser, animated: true, completion: {})
     }
 }
 

@@ -164,21 +164,34 @@ extension MainViewController{
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             
-            self .refreshData({ (_) in
-                self.tableView.mj_header.endRefreshing()
-            })
+            [weak self] in
+            
+            if let strongSelf = self {
+                
+                strongSelf .refreshData({ (_) in
+                    strongSelf.tableView.mj_header.endRefreshing()
+                })
+            }
+            
         })
         
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            self.loadMore({ (_) in
-                self.tableView.mj_footer.endRefreshing()
-            })
+            
+            [weak self] in
+            
+            if let strongSelf = self {
+                
+                strongSelf.loadMore({ (_) in
+                    strongSelf.tableView.mj_footer.endRefreshing()
+                })
+            }
         })
         
     }
     
     // 刷新数据
     func refreshData(finished:(Void)-> Void) {
+        
         //移除老数据
         self.mainPageDataSource?.removeAll()
         self.currentPage = 0
@@ -187,7 +200,6 @@ extension MainViewController{
         guard self.type.rawValue < self.navDataSource?.count else {return}
         let model:DBMZNavPageModel = self.navDataSource.get(self.type.rawValue)
         
-        //self.refreshing = true
         self.requetMainPage(model.url, block: { (_dataArray :[DBMZMainPageModel]) in
             
             finished()
