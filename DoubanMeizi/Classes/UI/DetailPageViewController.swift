@@ -42,7 +42,6 @@ class DetailPageViewController: UIViewController {
         self.collectionView!.delegate = self
         
         layout.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH)
-        
         self.collectionView!.registerClass(ImageTextCell.self, forCellWithReuseIdentifier: "ImageTextCell")
         
         self.view.addSubview(self.collectionView!)
@@ -130,6 +129,23 @@ extension DetailPageViewController:UICollectionViewDelegate,UICollectionViewData
         let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(indexPath.section)
         presentViewController(browser, animated: true, completion: {})
+        
+        //网络图片
+//        var remoteImage = [NSURL]()
+//        for imageUrl in self.imageArray! {
+//            let photo = NSURL(string:imageUrl)
+//            
+//            remoteImage.append(photo!)
+//        }
+//
+//        //网路数据源
+//        let browser = PhotoBrowserView.initWithPhotos(withUrlArray: remoteImage)
+//        //类型为网络
+//        browser.sourceType = SourceType.REMOTE
+//        //设置展示的第一张图片
+//        browser.index = indexPath.row
+//        //显示
+//        browser.show()
     }
 }
 
@@ -157,6 +173,7 @@ class ImageTextCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.imageView = UIImageView()
+        self.imageView?.contentMode = .Center
         self.addSubview(self.imageView!)
         
     }

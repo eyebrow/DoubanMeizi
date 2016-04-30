@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C2705BF94B44CB03B4AF9D6F'
+               BlueprintIdentifier = '94A072174E7C1A439CC3D7B1'
                BlueprintName = 'Swift_cURLCommand'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Swift_cURLCommand.framework'>

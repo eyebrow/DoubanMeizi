@@ -22,6 +22,8 @@ def pods
     pod 'Swift_cURLCommand'
     pod 'SnapKit'
     pod 'BSImagePicker', '~> 2.2'
+    pod 'YYWebImage'
+    pod 'JGProgressHUD'
     pod 'SKPhotoBrowser'
     use_frameworks!
     

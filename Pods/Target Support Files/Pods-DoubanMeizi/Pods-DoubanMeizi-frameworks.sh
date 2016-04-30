@@ -90,6 +90,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-DoubanMeizi/Cent.framework"
   install_framework "Pods-DoubanMeizi/Dollar.framework"
   install_framework "Pods-DoubanMeizi/HMSegmentedControl.framework"
+  install_framework "Pods-DoubanMeizi/JGProgressHUD.framework"
   install_framework "Pods-DoubanMeizi/KeychainAccess.framework"
   install_framework "Pods-DoubanMeizi/Kingfisher.framework"
   install_framework "Pods-DoubanMeizi/MJRefresh.framework"
@@ -105,7 +106,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-DoubanMeizi/UIColor_Hex_Swift.framework"
   install_framework "Pods-DoubanMeizi/UIImageViewModeScaleAspect.framework"
   install_framework "Pods-DoubanMeizi/XCGLogger.framework"
+  install_framework "Pods-DoubanMeizi/YYCache.framework"
+  install_framework "Pods-DoubanMeizi/YYImage.framework"
   install_framework "Pods-DoubanMeizi/YYText.framework"
+  install_framework "Pods-DoubanMeizi/YYWebImage.framework"
   install_framework "Pods-DoubanMeizi/hpple.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -115,6 +119,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DoubanMeizi/Cent.framework"
   install_framework "Pods-DoubanMeizi/Dollar.framework"
   install_framework "Pods-DoubanMeizi/HMSegmentedControl.framework"
+  install_framework "Pods-DoubanMeizi/JGProgressHUD.framework"
   install_framework "Pods-DoubanMeizi/KeychainAccess.framework"
   install_framework "Pods-DoubanMeizi/Kingfisher.framework"
   install_framework "Pods-DoubanMeizi/MJRefresh.framework"
@@ -130,6 +135,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DoubanMeizi/UIColor_Hex_Swift.framework"
   install_framework "Pods-DoubanMeizi/UIImageViewModeScaleAspect.framework"
   install_framework "Pods-DoubanMeizi/XCGLogger.framework"
+  install_framework "Pods-DoubanMeizi/YYCache.framework"
+  install_framework "Pods-DoubanMeizi/YYImage.framework"
   install_framework "Pods-DoubanMeizi/YYText.framework"
+  install_framework "Pods-DoubanMeizi/YYWebImage.framework"
   install_framework "Pods-DoubanMeizi/hpple.framework"
 fi
